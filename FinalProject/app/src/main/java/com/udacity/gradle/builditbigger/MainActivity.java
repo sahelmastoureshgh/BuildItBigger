@@ -5,7 +5,6 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.mastoureshgh.JokeTeller;
 
@@ -44,7 +43,12 @@ public class MainActivity extends ActionBarActivity {
     public void tellJoke(View view){
         JokeTeller jt=new JokeTeller();
         String temp = jt.getJoke();
-        Toast.makeText(this, temp, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(view.getContext(), temp, Toast.LENGTH_LONG).show();
+        //Intent myIntent = new Intent(this,JokeActivity.class);
+        //myIntent.putExtra(JokeActivity.JOKE_TEXT,temp);
+        //startActivity(myIntent);
+         new EndpointsAsyncTask().execute(this);
+
     }
 
 
