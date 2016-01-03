@@ -1,9 +1,11 @@
 package com.sahelmastoureshgh.jokeviewer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class JokeActivity extends ActionBarActivity {
@@ -15,13 +17,13 @@ public class JokeActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_jokes);
 
-        //Intent intent = getIntent();
-        //String tempJoke = intent.getStringExtra(JOKE_TEXT);
+        Intent intent = getIntent();
+        String tempJoke = intent.getStringExtra(JOKE_TEXT);
 
-        //if (tempJoke != null) {
-           // TextView jokeText = (TextView) findViewById(R.id.joketext);
-            //jokeText.setText(tempJoke);
-        //}
+        if (tempJoke != null) {
+            TextView jokeText = (TextView) findViewById(R.id.joketext);
+            jokeText.setText(tempJoke);
+        }
     }
 
 

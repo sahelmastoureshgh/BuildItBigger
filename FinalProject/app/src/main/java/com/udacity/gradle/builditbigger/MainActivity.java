@@ -6,8 +6,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.mastoureshgh.JokeTeller;
-
 
 public class MainActivity extends ActionBarActivity {
 
@@ -40,13 +38,12 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Call AsynckTask method to tell joke
+     * @param view
+     */
     public void tellJoke(View view){
-        JokeTeller jt=new JokeTeller();
-        String temp = jt.getJoke();
-        //Toast.makeText(view.getContext(), temp, Toast.LENGTH_LONG).show();
-        //Intent myIntent = new Intent(this,JokeActivity.class);
-        //myIntent.putExtra(JokeActivity.JOKE_TEXT,temp);
-        //startActivity(myIntent);
+
          new EndpointsAsyncTask().execute(this);
 
     }
